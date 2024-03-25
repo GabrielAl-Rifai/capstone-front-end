@@ -1,4 +1,4 @@
-mport './App.css';
+import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import AuthPage from './pages/auth';
 import Dashboard from './pages/dashboard';
