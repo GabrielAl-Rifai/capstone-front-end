@@ -1,19 +1,19 @@
-import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import AuthPage from './pages/auth';
-import Dashboard from './pages/dashboard';
-import Navbar from './components/navbar';
-import { ProtectedRoutes } from './components/protectedRoutes/index';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import AuthPage from "./pages/Auth";
+import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/NavBar";
+import { ProtectedRoutes } from "./components/ProtectedRoutes";
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Navbar />
-      <h1>Meal Schedule</h1>
+      <h1>My Meal Schedule</h1>
       <Routes>
-        <Route path='/auth' element={<AuthPage />} />
+        <Route path="/auth" element={<AuthPage />} />
         <Route element={<ProtectedRoutes />}>
-
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </div>
@@ -22,5 +22,7 @@ function App() {
 
 export default App;
 
-{/* <Route path='/meal_search' element={<Meal_Search />} />
-<Route path='/meal_schedule' element={<Meal_Schedule /> */}
+{
+  /* <Route path='/meal_search' element={<Meal_Search />} />
+<Route path='/meal_schedule' element={<Meal_Schedule /> */
+}
