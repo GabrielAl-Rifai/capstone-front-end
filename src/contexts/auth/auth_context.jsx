@@ -3,34 +3,29 @@ import { useCookies } from "react-cookie";
 import axios from "axios";
 
 const AppContext = createContext();
-
-export const UserProvider = ({ children }) => {
-  const [cookies, setCookies, removeCookie] = useCookies();
-
+export function UserProvider({ children }) {
+  const [cookies, setCookie, removeCookie] = useCookies();
   const login = async (formData) => {
     let res = await axios({
       method: "POST",
-      url: "http://localhost:5000/api/auth",
+      url: "http://localhost:3000/api/auth",
       data: formData,
     });
-
-    setCookies("token", res.data.token); // your token
+    setCookie("token", res.data.token);
   };
-
   const signUp = async (formData) => {
     let res = await axios({
       method: "POST",
-      url: "http://localhost:5000/api/users",
+      url: "http://localhost:3000/api/users",
       data: formData,
     });
-
-    setCookies("token", res.data.token); // your token
+    setCookie("token", res.data.token);
   };
-
   const logout = () => {
-    ["token"].forEach((obj) => removeCookie(obj)); // remove data save in cookies
+    ["token"].forEach((obj) => {
+      removeCookie(obj);
+    });
   };
-
   const value = useMemo(
     () => ({
       cookies,
@@ -40,10 +35,8 @@ export const UserProvider = ({ children }) => {
     }),
     [cookies]
   );
-
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
-};
-
+}
 export const useAuth = () => {
   return useContext(AppContext);
 };
