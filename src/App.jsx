@@ -9,11 +9,11 @@ function App() {
   return (
     <div className='App'>
       <Navbar />
-      <h1>My App</h1>
+      <h1>Meal Schedule</h1>
       <Routes>
         <Route path='/auth' element={<AuthPage />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path='/dashboard' element={<Dashboard />} />
+
         </Route>
       </Routes>
     </div>
@@ -21,3 +21,6 @@ function App() {
 }
 
 export default App;
+
+{/* <Route path='/meal_search' element={<Meal_Search />} />
+<Route path='/meal_schedule' element={<Meal_Schedule /> */}
