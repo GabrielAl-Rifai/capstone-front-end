@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/auth";
+import { useAuth } from "../../contexts/auth";
 
 const SignUp = ({ setNewUser }) => {
   const nav = useNavigate();
