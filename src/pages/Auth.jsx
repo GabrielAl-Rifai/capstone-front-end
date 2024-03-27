@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import LoginForm from "../components/LoginForm.jsx";
-import SignUp from "../components/SignupForm.jsx";
+import LoginForm from "../components/login_form/LoginForm.jsx";
+import SignUp from "../components/signup_form/SignupForm.jsx";
 
 const Auth = () => {
   const [newUser, setNewUser] = useState(false);

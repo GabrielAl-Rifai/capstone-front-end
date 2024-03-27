@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { useAuth } from "../../contexts/auth/index";
+import { useAuth } from "../../contexts/auth/auth_context";
 
 export const ProtectedRoutes = () => {
   const { cookies } = useAuth();

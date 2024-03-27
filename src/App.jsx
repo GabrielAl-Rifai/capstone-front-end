@@ -2,8 +2,8 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import AuthPage from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
-import Navbar from "./components/NavBar";
-import { ProtectedRoutes } from "./components/ProtectedRoutes";
+import Navbar from "./components/navbar/NavBar";
+import { ProtectedRoutes } from "./components/protectedRoutes/ProtectedRoutes";
 
 function App() {
   return (
