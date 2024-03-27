@@ -5,6 +5,7 @@ Food to Table is a web application that allows users to search for recipes based
 
 Functionality and lofic needed for Favorite Recipes Page and "This Week's Meals Page.
 
+![alt text](<src/assets/IMG_5788.jpg>)
 ## Features
 
 - User authentication: Users can sign up, log in, and log out securely.
