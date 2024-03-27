@@ -7,11 +7,16 @@ import { ProtectedRoutes } from "./components/protectedRoutes/ProtectedRoutes";
 import FavoriteRecipes from "./pages/FavoriteRecipes";
 import ThisWeeksMeals from "./pages/ThisWeeksMeals";
 
+
+
+
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+    >
       <Navbar />
-      <h1>Recipe Search</h1>
+      <h1>Food to Table</h1>
       <Routes>
         <Route path="/auth" element={<AuthPage />} />
         <Route element={<ProtectedRoutes />}>
@@ -25,3 +30,4 @@ function App() {
 }
 
 export default App;
+

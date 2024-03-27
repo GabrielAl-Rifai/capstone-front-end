@@ -1,7 +1,31 @@
-Spoonacular: 2ca531f013c64b21873abdea5b97de6f
+# Food to Table Web Application
 
+Food to Table is a web application that allows users to search for recipes based on their preferences, save their favorite recipes, and plan their meals for the week. It provides a user-friendly interface for interacting with the Spoonacular API to fetch recipe data.
 
-RapidAPI: cfe608883cmshc089ec670ef24afp11d781jsnbee990a342d9
+## Features
 
-spoonacular-recipe-food-nutrition-v1.p.rapidapi.com
+- User authentication: Users can sign up, log in, and log out securely.
+- Recipe search: Users can search for recipes based on keywords, dietary preferences, and excluded ingredients.
+- ADD UPDATE & DELETE favorite recipes: Users can save their favorite recipes for easy access later.
+- Weekly meal planner: Users can plan their meals for the week by adding recipes to specific days in a calendar view.
+- Responsive design: The application is optimized for use on both desktop and mobile devices.
 
+## Technologies Used
+
+- **Frontend**: React.js, React Router, React DnD (Drag and Drop), Axios
+- **Backend**: Node.js, Express.js, MongoDB, Mongoose
+- **Authentication**: JSON Web Tokens (JWT)
+- **API**: Rapid API & Spoonacular API for fetching recipe data
+- **Styling**: CSS, Bootstrap
+
+## Installation
+
+1. Clone the frontend repository:
+
+   ```bash
+   git clone https://github.com/your-username/capstone-front-end.git
+
+2. Clone the backend repository:
+
+   ```bash
+   git clone https://github.com/GabrielAl-Rifai/capstone-back-end.git

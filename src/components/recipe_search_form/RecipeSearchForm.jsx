@@ -1,4 +1,3 @@
-// components/RecipeSearchForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -8,21 +7,36 @@ const RecipeSearchForm = () => {
   const [exclude, setExclude] = useState("");
   const [response, setResponse] = useState(null);
 
-  const getRecipes = async (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get("/api/search", {
-        params: { keyword, diet, exclude },
-      });
+      const options = {
+        method: "GET",
+        url: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch",
+        params: {
+          query: keyword,
+          diet,
+          excludeIngredients: exclude,
+          number: "20",
+          offset: "0",
+        },
+        headers: {
+          'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+          'X-RapidAPI-Key': 'cfe608883cmshc089ec670ef24afp11d781jsnbee990a342d9',
+        },
+      };
+      const res = await axios.request(options);
       setResponse(res.data.results);
+
+      history.push("/favorite-recipes", { searchResults: res.data.results });
     } catch (error) {
       console.error("Error fetching recipes:", error);
     }
   };
+
   return (
     <div>
-      
-      <form onSubmit={getRecipes}>
+      <form onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="Lasagna? Beef Stew?"
