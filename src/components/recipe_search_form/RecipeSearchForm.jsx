@@ -7,7 +7,7 @@ const RecipeSearchForm = () => {
   const [diet, setDiet] = useState("none");
   const [exclude, setExclude] = useState("");
   const [response, setResponse] = useState(null);
-  
+
   const getRecipes = async (e) => {
     e.preventDefault();
     try {
@@ -19,3 +19,50 @@ const RecipeSearchForm = () => {
       console.error("Error fetching recipes:", error);
     }
   };
+  return (
+    <div>
+      
+      <form onSubmit={getRecipes}>
+        <input
+          type="text"
+          placeholder="Lasagna? Beef Stew?"
+          value={keyword}
+          onChange={(e) => setKeyword(e.target.value)}
+        />
+        <select value={diet} onChange={(e) => setDiet(e.target.value)}>
+          {[
+            "no strict diet",
+            "pescetarian",
+            "lacto vegetarian",
+            "ovo vegetarian",
+            "vegan",
+            "vegetarian",
+          ].map((diet) => (
+            <option key={diet} value={diet}>
+              {diet}
+            </option>
+          ))}
+        </select>
+        <input
+          type="text"
+          placeholder="Exclude Ingredients?"
+          value={exclude}
+          onChange={(e) => setExclude(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+      {response && (
+        <div>
+          <h4>Search Results:</h4>
+          <ul>
+            {response.map((recipe) => (
+              <li key={recipe.id}>{recipe.title}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default RecipeSearchForm;

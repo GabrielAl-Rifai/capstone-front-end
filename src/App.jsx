@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <h1>My Meal Schedule</h1>
+      <h1>Recipe Search</h1>
       <Routes>
         <Route path="/auth" element={<AuthPage />} />
         <Route element={<ProtectedRoutes />}>
