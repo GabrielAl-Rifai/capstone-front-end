@@ -10,7 +10,7 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>You are logged in so can see this</h1>
+      <h3>Meal Search</h13>
       <button onClick={handleClick}>LogOut</button>
     </div>
   );
