@@ -6,7 +6,7 @@ Food to Table is a web application that allows users to search for recipes based
 
 - User authentication: Users can sign up, log in, and log out securely.
 - Recipe search: Users can search for recipes based on keywords, dietary preferences, and excluded ingredients.
-- ADD UPDATE & DELETE favorite recipes: Users can save their favorite recipes for easy access later.
+- ADD UPDATE & DELETE favorite recipes: Users can save and modify their favorite recipes list for easy access later.
 - Weekly meal planner: Users can plan their meals for the week by adding recipes to specific days in a calendar view.
 - Responsive design: The application is optimized for use on both desktop and mobile devices.
 
@@ -15,7 +15,7 @@ Food to Table is a web application that allows users to search for recipes based
 - **Frontend**: React.js, React Router, React DnD (Drag and Drop), Axios
 - **Backend**: Node.js, Express.js, MongoDB, Mongoose
 - **Authentication**: JSON Web Tokens (JWT)
-- **API**: Rapid API & Spoonacular API for fetching recipe data
+- **API**: Rapid API & Spoonacular API for fetching recipe data https://rapidapi.com/spoonacular/api/recipe-food-nutrition/
 - **Styling**: CSS, Bootstrap
 
 ## Installation
