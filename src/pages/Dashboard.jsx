@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useAuth } from "../contexts/auth/auth_context";
 import RecipeSearchForm from "../components/recipe_search_form/RecipeSearchForm";
 
-
-
 // const Dashboard = () => {
 //   const { logout } = useAuth();
 
@@ -40,5 +38,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
