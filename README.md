@@ -1,6 +1,9 @@
 # Food to Table Web Application
 
 Food to Table is a web application that allows users to search for recipes based on their preferences, save their favorite recipes, and plan their meals for the week. It provides a user-friendly interface for interacting with the Spoonacular API to fetch recipe data.
+![alt text](<src/assets/Food-To-Table.jpg>)
+
+Functionality and lofic needed for Favorite Recipes Page and "This Week's Meals Page.
 
 ## Features
 
