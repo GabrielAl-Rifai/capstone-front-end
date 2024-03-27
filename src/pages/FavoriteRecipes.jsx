@@ -2,8 +2,8 @@ import React from "react";
 import { useLocation } from "react-router-dom"; // Import useLocation
 
 const FavoriteRecipes = () => {
-  const location = useLocation(); // Initialize useLocation
-  const searchResults = location.state?.searchResults; // Get search results from location state
+  const location = useLocation();
+  const searchResults = location.state?.searchResults; 
 
   return (
     <div>
