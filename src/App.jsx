@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import AuthPage from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
-import Navbar from "./components/navbar/NavBar";
+import Navbar from "./components/navbar/Navbar";
 import { ProtectedRoutes } from "./components/protectedRoutes/ProtectedRoutes";
 import FavoriteRecipes from "./pages/FavoriteRecipes";
 import ThisWeeksMeals from "./pages/ThisWeeksMeals";

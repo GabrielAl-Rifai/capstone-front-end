@@ -1,6 +1,7 @@
 import React from "react";
 import RecipeSearchForm from "../components/recipe_search_form/RecipeSearchForm";
 
+
 const Dashboard = () => {
   return (
     <div>

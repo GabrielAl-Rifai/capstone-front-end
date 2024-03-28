@@ -2,7 +2,7 @@ import React from "react";
 import { useDrag } from 'react-dnd';
 import { NativeTypes } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
+// import HTML5Backend from 'react-dnd-html5-backend';
 import Slider from "react-slick";
 
 // Component for individual recipe item

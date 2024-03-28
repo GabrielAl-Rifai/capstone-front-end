@@ -1,6 +1,6 @@
 import React from "react";
-import WeeklyCalendar from "../components/WeeklyCalendar";
-import FavoriteRecipesCarousel from "../components/FavoriteRecipesCarousel";
+// import WeeklyCalendar from "../components/WeeklyCalendar";
+// import FavoriteRecipesCarousel from "../components/FavoriteRecipesCarousel";
 
 const ThisWeeksMeals = () => {
   return (

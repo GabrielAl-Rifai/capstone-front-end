@@ -7,6 +7,7 @@ const RecipeSearchForm = () => {
   const [diet, setDiet] = useState("none");
   const [exclude, setExclude] = useState("");
   const [response, setResponse] = useState(null);
+  const [myFavorites, setMyFavorites] = useState([]);
 
   // Function to handle form submission
   const handleSearch = async (e) => {
@@ -24,19 +25,31 @@ const RecipeSearchForm = () => {
           offset: "0",
         },
         headers: {
-          'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-          'X-RapidAPI-Key': 'cfe608883cmshc089ec670ef24afp11d781jsnbee990a342d9',
+          "X-RapidAPI-Host":
+            "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+          "X-RapidAPI-Key":
+            "cfe608883cmshc089ec670ef24afp11d781jsnbee990a342d9",
         },
       };
       // Send the API request and set the response data to state
       const res = await axios.request(options);
       setResponse(res.data.results);
-
-      // Redirect to the favorite recipes page and pass search results as state
-      history.push("/favorite-recipes", { searchResults: res.data.results });
     } catch (error) {
       // Log any errors that occur during the API request
       console.error("Error fetching recipes:", error);
+    }
+  };
+
+  const handleCheckboxChange = (recipeId) => {
+    // Check if recipeId is already in My Favorites
+    const index = myFavorites.indexOf(recipeId);
+    if (index === -1) {
+      // If not, add it to My Favorites
+      setMyFavorites([...myFavorites, recipeId]);
+    } else {
+      // If already in My Favorites, remove it
+      const updatedFavorites = myFavorites.filter((id) => id !== recipeId);
+      setMyFavorites(updatedFavorites);
     }
   };
 
@@ -81,7 +94,14 @@ const RecipeSearchForm = () => {
           <h4>Search Results:</h4>
           <ul>
             {response.map((recipe) => (
-              <li key={recipe.id}>{recipe.title}</li>
+              <li key={recipe.id}>
+                <input
+                  type="checkbox"
+                  checked={myFavorites.includes(recipe.id)}
+                  onChange={() => handleCheckboxChange(recipe.id)}
+                />
+                {recipe.title}
+              </li>
             ))}
           </ul>
         </div>

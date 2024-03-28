@@ -1,20 +1,19 @@
 import React from "react";
-import { useLocation } from "react-router-dom"; // Import useLocation
+import { useLocation } from "react-router-dom";
+import MyFavorites from "../components/my_favorites/MyFavorites"; // Import MyFavorites component
+// import { useNavigate } from "react-router-dom";
+
+
 
 const FavoriteRecipes = () => {
   const location = useLocation();
-  const searchResults = location.state?.searchResults; 
+  // const nav = useNavigate();
+  const searchResults = location.state?.searchResults;
 
   return (
     <div>
       <h2>Favorite Recipes</h2>
-      {searchResults && (
-        <ul>
-          {searchResults.map((recipe) => (
-            <li key={recipe.id}>{recipe.title}</li>
-          ))}
-        </ul>
-      )}
+      <MyFavorites favoriteRecipes={searchResults} />
     </div>
   );
 };
