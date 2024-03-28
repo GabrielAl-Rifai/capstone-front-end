@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const RecipeSearchForm = () => {
+const RecipeSearchForm = ({myFavorites, setMyFavorites}) => {
   // State variables to store input values and search results
   const [keyword, setKeyword] = useState("");
   const [diet, setDiet] = useState("none");
   const [exclude, setExclude] = useState("");
   const [response, setResponse] = useState(null);
-  const [myFavorites, setMyFavorites] = useState([]);
+ 
 
   // Function to handle form submission
   const handleSearch = async (e) => {
@@ -40,15 +40,16 @@ const RecipeSearchForm = () => {
     }
   };
 
-  const handleCheckboxChange = (recipeId) => {
+  const handleCheckboxChange = (recipe) => {
     // Check if recipeId is already in My Favorites
-    const index = myFavorites.indexOf(recipeId);
+    const index = myFavorites.indexOf(recipe.id);
+    console.log (index);
     if (index === -1) {
       // If not, add it to My Favorites
-      setMyFavorites([...myFavorites, recipeId]);
+      setMyFavorites([...myFavorites, recipe]);
     } else {
       // If already in My Favorites, remove it
-      const updatedFavorites = myFavorites.filter((id) => id !== recipeId);
+      const updatedFavorites = myFavorites.filter((id) => id !== recipe.id);
       setMyFavorites(updatedFavorites);
     }
   };
@@ -98,7 +99,7 @@ const RecipeSearchForm = () => {
                 <input
                   type="checkbox"
                   checked={myFavorites.includes(recipe.id)}
-                  onChange={() => handleCheckboxChange(recipe.id)}
+                  onChange={() => handleCheckboxChange(recipe)}
                 />
                 {recipe.title}
               </li>

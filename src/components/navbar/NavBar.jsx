@@ -11,8 +11,8 @@ const Navbar = () => {
       <Link to="/dashboard" className="nav-link">
         Dashboard
       </Link>
-      <Link to="/favorite-recipes" className="nav-link">
-        Favorite Recipes
+      <Link to="/my-favorite-recipes" className="nav-link">
+        My Favorite Recipes
       </Link>
       <Link to="/this-weeks-meals" className="nav-link">
         This Week's Meals
